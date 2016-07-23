@@ -1,25 +1,39 @@
 import argparse
 import doctest
 import re
-import shlex
 import sys
 import types
+import subprocess
 
-
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 NAME = 'bashtest'
 CHECK_EXITCODE = False
 
+_find_unsafe = re.compile(r'[^\w@%+=:,./-]').search
+
+
+def quote(s):
+    """Return a shell-escaped version of the string *s*."""
+    if not s:
+        return "''"
+    if _find_unsafe(s) is None:
+        return s
+
+    # use single quotes, and put single quotes into double quotes
+    # the string $'b is then quoted as '$'"'"'b'
+    return "'" + s.replace("'", "'\"'\"'") + "'"
+
 
 def _fake_module_run(command):
-    import subprocess
-    import shlex
-    command = 'bash -c %s' % (shlex.quote(command))
-    r = subprocess.run(command, stdout=subprocess.PIPE,
-                       stderr=subprocess.STDOUT, shell=True)
-    print(r.stdout.decode())
+    command = 'bash -c %s' % (quote(command))
+    kwargs = dict(stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+    process = subprocess.Popen(command, **kwargs)
+    stdout, _ = process.communicate()
+    exitcode = process.poll()
+
+    print(stdout.decode())
     if CHECK_EXITCODE:
-        print('<EXITCODE={}>'.format(r.returncode))
+        print('<EXITCODE={}>'.format(exitcode))
 
 
 def parseargs():
@@ -63,7 +77,7 @@ def parseargs():
 def __re_repl(match):
     g1 = match.group(1)
     g2 = match.group(2)
-    return '%s>>> run(%s)' % (g1, shlex.quote(g2.replace('\\', '\\\\')))
+    return '%s>>> run(%s)' % (g1, quote(g2.replace('\\', '\\\\')))
 
 
 def main():
