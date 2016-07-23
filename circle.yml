@@ -1,0 +1,12 @@
+dependencies:
+  override:
+    - pip -V
+    - pip install -U pip
+    - pip install -U ipdb
+    - pip install coveralls
+
+test:
+  override:
+    - python setup.py check -m -r -s
+    - python setup.py build
+    - python -m bashtest test_*.bashtest README.rst
