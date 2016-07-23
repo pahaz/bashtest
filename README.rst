@@ -67,8 +67,33 @@ More examples
 You can finde some examples in this project. Please check **test_*.bashtest**
 files
 
-DOCS
+HELP
 ----
+
+::
+
+    usage: bashtest [-h] [--exitcode] [--no-blankline-substitution]
+                    [--no-normalize-whitespace] [-v] [-q] [--version]
+                    file [file ...]
+
+    BashTest is a UNIX command-line tool for running text-based bash tests.
+
+    positional arguments:
+      file                  Input file
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      --exitcode            Print exitcode after command end of output
+      --no-blankline-substitution
+                            Substitute `<BLANKLINE>` if an expected output block
+                            contains a line containing only the `\n`
+      --no-normalize-whitespace
+                            All sequences of whitespace (blanks and newlines) are
+                            not equal
+      -v, --verbose
+      -q, --quiet
+      --version             Print the version string
+
 
 .. _Pahaz Blinov: https://github.com/pahaz/
 .. _bashtest: https://pypi.python.org/pypi/bashtest
