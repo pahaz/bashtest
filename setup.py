@@ -13,7 +13,7 @@ from setuptools import setup  # Always prefer setuptools over distutils
 
 here = path.abspath(path.dirname(__file__))
 name = 'bashtest'
-description = 'UNIX command-line tool for python line-based stream processing'
+description = 'UNIX command-line tool for bash/shell utils unit testing'
 url = 'https://github.com/pahaz/bashtest'
 ppa = 'https://pypi.python.org/packages/source/s/{0}/{0}-'.format(name)
 
@@ -64,6 +64,9 @@ setup(
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
