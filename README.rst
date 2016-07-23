@@ -28,16 +28,16 @@ For installing from source, clone the
 
     python setup.py install
 
-If you don`t have `pip` you can `install it <https://pip.pypa.io/en/stable/installing/#installation>`_
+If you don`t have **pip** you can `install it <https://pip.pypa.io/en/stable/installing/#installation>`_
 
 Typical use case
 ================
 
 You write a text processed util or script and you want to test it.
 
-For example, we want test `ls` util.
+For example, we want test **ls** util.
 
-All of we need is create `test_ls.bashtest` file::
+All of we need is create **test_ls.bashtest** file::
 
     $ ls ./testsuit/list-directory
     file1
@@ -47,7 +47,7 @@ All of we need is create `test_ls.bashtest` file::
 
 and then run tests ::
 
-    $ python -m bashtest test_ls.bashtest
+    $ bashtest test_ls.bashtest
     1 items passed all tests:
        1 tests in test_ls.bashtest
     1 tests in 1 items.
@@ -59,15 +59,16 @@ Test README examples
 
 You have a some open source project like this. And of course, as in any good
 open source project, you have examples. You can automatically check this
-examples. Just add `python -m bashtest README.rst` in your CI tests.
+examples. Just add **bashtest README.rst** in your CI tests.
 
 More examples
 =============
 
-You can finde some examples in this project. Please check `test_*.bashtest`
+You can finde some examples in this project. Please check **test_*.bashtest**
 files
 
 DOCS
 ----
 
 .. _Pahaz Blinov: https://github.com/pahaz/
+.. _bashtest: https://pypi.python.org/pypi/bashtest
