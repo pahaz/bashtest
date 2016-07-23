@@ -1,0 +1,6 @@
+This utility was born from the fact that I keep forgetting how to use "sed",
+and I suck at Perl. It brings ad-hoc command-line piping sensibilities
+to the Python interpeter.
+
+(Version 1.2 does better outputting of list-like results,
+thanks to Mark Eichin.)
