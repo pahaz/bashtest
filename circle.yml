@@ -4,6 +4,9 @@ dependencies:
     - pip install -U pip
     - pip install -U ipdb
     - pip install coveralls
+    - pip install docutils
+    - pip install check-manifest
+    - pip install Pygments
 
 test:
   override:
