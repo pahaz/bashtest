@@ -12,4 +12,6 @@ test:
   override:
     - python setup.py check -m -r -s
     - python setup.py build
-    - python -m bashtest test_*.bashtest README.rst
+    - python -m bashtest test_*.bashtest
+    - pip install bashtest
+    - bashtest README.rst
