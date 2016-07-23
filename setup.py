@@ -116,11 +116,11 @@ setup(
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
-    # entry_points={
-    #     'console_scripts': [
-    #         'sshtunnel=sshtunnel:_cli_main',
-    #     ]
-    # },
+    entry_points={
+        'console_scripts': [
+            'bashtest=bashtest:main',
+        ]
+    },
 
     # Integrate tox with setuptools
     # cmdclass={'test': Tox},

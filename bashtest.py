@@ -5,7 +5,7 @@ import sys
 import types
 import subprocess
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 NAME = 'bashtest'
 CHECK_EXITCODE = False
 
@@ -126,7 +126,8 @@ def main():
 
     if runner.failures:
         ret = 1
-    return ret
+
+    sys.exit(ret)
 
 if __name__ == '__main__':
-    sys.exit(main())
+    main()
