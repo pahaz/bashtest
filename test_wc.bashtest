@@ -1,0 +1,7 @@
+$ cat ./testsuit/list-directory/file1
+line1
+line2
+
+$ cat ./testsuit/list-directory/file1 | wc -l
+2
+

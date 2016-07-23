@@ -1,76 +1,73 @@
 **Author**: `Pahaz Blinov`_
 
-**Repo**: https://github.com/pahaz/py3line/
+**Repo**: https://github.com/pahaz/bashtest/
 
-Pyline is a UNIX command-line tool for line-based processing
-in Python with regex and output transform features
-similar to grep, sed, and awk.
+BashTest is a UNIX command-line tool for bash/shell utils unit testing.
 
-This project inspired by: `piep`_, `pysed`_, `pyline`_, `pyp`_ and
-`Jacob+Mark recipe <https://code.activestate.com/recipes/437932-pyline-a-grep-like-sed-like-command-line-tool/>`_
+This is a simplest way to write a simple bash tests.
 
-**requirements**: Python3
-
-**WHY I MAKE IT?**
-
-I sometimes have to use `sed` / `awk`.
-Not often, and so I always forget the necessary options and `sed` / `awk` DSL.
-But I now python, I like it, and I want use it for data processing.
-Default `python -c` is hard to write the kind of one-liner that works well.
-
-Why not a `pyline`?
- * Don`t support python3
- * Have many options (I want as much simple as possible solution)
- * Bad performance
- * Don`t support command chaining
-
-Why not a `pysed`?
- *
+**requirements**: Python2 or Python3
 
 Installation
 ============
 
-`py3line`_ is on PyPI, so simply run:
+`bashtest`_ is on PyPI, so simply run:
 
 ::
 
-    pip install py3line
+    pip install bashtest
 
 or ::
 
-    easy_install py3line
+    easy_install bashtest
 
 to have it installed in your environment.
 
 For installing from source, clone the
-`repo <https://github.com/pahaz/py3line>`_ and run::
+`repo <https://github.com/pahaz/bashtest>`_ and run::
 
     python setup.py install
 
-Usage scenarios
-===============
+If you don`t have `pip` you can `install it <https://pip.pypa.io/en/stable/installing/#installation>`_
 
-...
+Typical use case
+================
 
-Examples
---------
+You write a text processed util or script and you want to test it.
 
-Example 1: create spreadsheet
-=============================
+For example, we want test `ls` util.
 
-.. code-block:: bash
+All of we need is create `test_ls.bashtest` file::
 
-    $ echo -e "Here are\nsome\nwords for you." | ./py3line.py "x.split()" -a "len(x)"
-    2
-    1
-    3
+    $ ls ./testsuit/list-directory
+    file1
+    file2.txt
+    file3.py
+    file4.sh
+
+and then run tests ::
+
+    $ python -m bashtest test_ls.bashtest
+    1 items passed all tests:
+       1 tests in test_ls.bashtest
+    1 tests in 1 items.
+    1 passed and 0 failed.
+    Test passed.
+
+Test README examples
+====================
+
+You have a some open source project like this. And of course, as in any good
+open source project, you have examples. You can automatically check this
+examples. Just add `python -m bashtest README.rst` in your CI tests.
+
+More examples
+=============
+
+You can finde some examples in this project. Please check `test_*.bashtest`
+files
 
 DOCS
 ----
 
 .. _Pahaz Blinov: https://github.com/pahaz/
-.. _py3line: https://pypi.python.org/pypi/py3line/
-.. _pyp: https://pypi.python.org/pypi/pyp/
-.. _piep: https://github.com/timbertson/piep/tree/master/piep/
-.. _pysed: https://github.com/dslackw/pysed/blob/master/pysed/main.py
-.. _pyline: https://github.com/westurner/pyline/blob/master/pyline/pyline.py

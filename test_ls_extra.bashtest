@@ -1,0 +1,9 @@
+$ ls -lah ./testsuit/list-directory | awk {'print $1"\t"$2"\t"$5"\t"$6"\t"$7"\t"$8"\t"$9'}
+total       32
+drwxr-xr-x  6       204B    Jul     20      07:45   .
+drwxr-xr-x  4       136B    Jul     23      12:29   ..
+-rw-r--r--  1       12B     Jul     20      07:44   file1
+-rw-r--r--  1       257B    Jul     20      07:45   file2.txt
+-rw-r--r--  1       24B     Jul     20      07:43   file3.py
+-rw-r--r--  1       28B     Jul     20      07:43   file4.sh
+
