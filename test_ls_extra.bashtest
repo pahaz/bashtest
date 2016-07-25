@@ -1,8 +1,6 @@
 $ chmod -R 0777 ./testsuit/list-directory
-$ ls -lah ./testsuit/list-directory | awk {'print $1" "$9'}
+$ ls -lAh ./testsuit/list-directory | awk {'print $1" "$9'}
 total
-drwxrwxrwx .
-drwxr-xr-x ..
 -rwxrwxrwx file1
 -rwxrwxrwx file2.txt
 -rwxrwxrwx file3.py
