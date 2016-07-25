@@ -4,11 +4,6 @@
 
 |pyversions| |license|
 
-
-.. image:: https://circleci.com/gh/pahaz/bashtest.svg?style=svg
-    :target: https://circleci.com/gh/pahaz/bashtest
-
-
 **Author**: `Pahaz Blinov`_
 
 **Repo**: https://github.com/pahaz/bashtest/
