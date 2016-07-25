@@ -1,5 +1,5 @@
 $ chmod -R 0777 ./testsuit/list-directory
-$ ls -lahO ./testsuit/list-directory | awk {'print $1"\t"$10'}
+$ ls -lah ./testsuit/list-directory | awk {'print $1"\t"$9'}
 total
 drwxrwxrwx      .
 drwxr-xr-x      ..
