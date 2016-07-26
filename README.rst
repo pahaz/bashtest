@@ -1,3 +1,9 @@
+|CircleCI| |coveralls| |version|
+
+|DwnMonth| |DwnWeek| |DwnDay|
+
+|pyversions| |license|
+
 **Author**: `Pahaz Blinov`_
 
 **Repo**: https://github.com/pahaz/bashtest/
@@ -97,3 +103,15 @@ HELP
 
 .. _Pahaz Blinov: https://github.com/pahaz/
 .. _bashtest: https://pypi.python.org/pypi/bashtest
+.. |CircleCI| image:: https://circleci.com/gh/pahaz/bashtest.svg?style=svg
+   :target: https://circleci.com/gh/pahaz/bashtest
+.. |coveralls| image:: https://coveralls.io/repos/github/pahaz/bashtest/badge.svg?branch=master
+   :target: https://coveralls.io/github/pahaz/bashtest?branch=master
+.. |DwnMonth| image:: https://img.shields.io/pypi/dm/bashtest.svg
+.. |DwnWeek| image:: https://img.shields.io/pypi/dw/bashtest.svg
+.. |DwnDay| image:: https://img.shields.io/pypi/dd/bashtest.svg
+.. |pyversions| image:: https://img.shields.io/pypi/pyversions/bashtest.svg
+.. |version| image:: https://img.shields.io/pypi/v/bashtest.svg
+   :target: `bashtest`_
+.. |license| image::  https://img.shields.io/pypi/l/bashtest.svg
+   :target: https://github.com/pahaz/bashtest/blob/master/LICENSE
