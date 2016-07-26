@@ -15,4 +15,3 @@ test:
     - python -m bashtest test_*.bashtest
     - pip install bashtest
     - bashtest README.rst
-    - coveralls
