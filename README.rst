@@ -1,7 +1,5 @@
 |CircleCI| |coveralls| |version|
 
-|DwnMonth| |DwnWeek| |DwnDay|
-
 |pyversions| |license|
 
 **Author**: `Pahaz Blinov`_
