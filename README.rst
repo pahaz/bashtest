@@ -1,18 +1,18 @@
 |CircleCI| |coveralls| |version|
 
-|DwnMonth| |DwnWeek| |DwnDay|
-
 |pyversions| |license|
 
 **Author**: `Pahaz Blinov`_
 
 **Repo**: https://github.com/pahaz/bashtest/
 
-BashTest is a UNIX command-line tool for bash/shell utils unit testing.
+BashTest is a UNIX command-line tool for the testing bash/shell utilites.
 
-This is a simplest way to write a simple bash tests.
+This is a simplest way to write simple bash tests.
 
 **requirements**: Python2 or Python3
+
+**keywords**: bash unittest, unittesting, bash tesing, sh unit testing
 
 Installation
 ============
