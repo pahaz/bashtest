@@ -1,0 +1,25 @@
+$ cd ./testsuit/statutil && python ../../bashtest.py -v *.bashtest
+Trying:
+    run('ls testsuit/')
+Expecting:
+    foo.py  main.py
+ok
+Trying:
+    run('./stat.sh testsuit/')
+Expecting:
+    Evaluate *.py statistics
+    PYTHON FILES:        2
+    PYTHON LINES:        4
+ok
+Trying:
+    run('./stat.sh')
+Expecting:
+    Evaluate *.py statistics
+    PYTHON FILES:        3
+    PYTHON LINES:        8
+ok
+1 items passed all tests:
+   3 tests in tests.bashtest
+3 tests in 1 items.
+3 passed and 0 failed.
+Test passed.

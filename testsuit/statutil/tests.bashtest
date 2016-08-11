@@ -1,0 +1,12 @@
+$ ls testsuit/
+foo.py  main.py
+
+$ ./stat.sh testsuit/
+Evaluate *.py statistics
+PYTHON FILES:        2
+PYTHON LINES:        4
+
+$ ./stat.sh
+Evaluate *.py statistics
+PYTHON FILES:        3
+PYTHON LINES:        8

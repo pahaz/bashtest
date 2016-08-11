@@ -1,0 +1,2 @@
+import qwe
+print(qwe)
