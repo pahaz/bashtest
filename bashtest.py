@@ -5,7 +5,7 @@ import sys
 import types
 import subprocess
 
-__version__ = '0.0.5'
+__version__ = '0.0.6'
 NAME = 'bashtest'
 CHECK_EXITCODE = False
 
@@ -17,7 +17,7 @@ def quote(s):
     if not s:
         return "''"
     if _find_unsafe(s) is None:
-        return s
+        return "'" + s + "'"
 
     # use single quotes, and put single quotes into double quotes
     # the string $'b is then quoted as '$'"'"'b'
