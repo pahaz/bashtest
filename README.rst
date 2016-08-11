@@ -73,11 +73,11 @@ More examples
 You can finde some examples in this project. Please check **test_*.bashtest**
 files
 
-CHANGELIST
-==========
+changelog
+=========
 
 ** 0.0.6 **
- - fix bad command escaping bug `#5 <https://github.com/pahaz/bashtest/issues/5>`_
+ - fix! bad command escaping bug `#5 <https://github.com/pahaz/bashtest/issues/5>`_
 
 HELP
 ----
