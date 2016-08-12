@@ -1,4 +1,4 @@
-|CircleCI| |coveralls| |version|
+|CircleCI| |version|
 
 |pyversions| |license|
 
@@ -111,8 +111,6 @@ HELP
 .. _bashtest: https://pypi.python.org/pypi/bashtest
 .. |CircleCI| image:: https://circleci.com/gh/pahaz/bashtest.svg?style=svg
    :target: https://circleci.com/gh/pahaz/bashtest
-.. |coveralls| image:: https://coveralls.io/repos/github/pahaz/bashtest/badge.svg?branch=master
-   :target: https://coveralls.io/github/pahaz/bashtest?branch=master
 .. |DwnMonth| image:: https://img.shields.io/pypi/dm/bashtest.svg
 .. |DwnWeek| image:: https://img.shields.io/pypi/dw/bashtest.svg
 .. |DwnDay| image:: https://img.shields.io/pypi/dd/bashtest.svg
