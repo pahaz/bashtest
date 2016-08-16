@@ -43,7 +43,9 @@ You have a command line util or bash/sh script and you want to test it.
 
 For example, we want to test **ls** util.
 
-All of we need is to create **test_ls.bashtest** file::
+All of we need is to create text file with execution log.
+
+**test_ls.bashtest** ::
 
     $ ls ./testsuit/list-directory
     file1
@@ -51,7 +53,7 @@ All of we need is to create **test_ls.bashtest** file::
     file3.py
     file4.sh
 
-and then run tests ::
+Run this tests ::
 
     $ bashtest test_ls.bashtest
     1 items passed all tests:
