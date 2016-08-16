@@ -39,11 +39,11 @@ If you don`t have **pip** you can `install it <https://pip.pypa.io/en/stable/ins
 Typical use case
 ================
 
-You write a text processed util or script and you want to test it.
+You have a command line util or bash/sh script and you want to test it.
 
-For example, we want test **ls** util.
+For example, we want to test **ls** util.
 
-All of we need is create **test_ls.bashtest** file::
+All of we need is to create **test_ls.bashtest** file::
 
     $ ls ./testsuit/list-directory
     file1
