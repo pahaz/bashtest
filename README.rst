@@ -45,7 +45,7 @@ For example, we want to test **ls** util.
 
 All of we need is to create text file with execution log.
 
-**test_ls.bashtest** ::
+**./test_ls.bashtest** ::
 
     $ ls ./testsuit/list-directory
     file1
