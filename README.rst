@@ -80,7 +80,8 @@ changelog
 
 ** 0.0.7 **
  - fix! remove ugly and useless options
- - feat! Test README.rst `#3 <https://github.com/pahaz/bashtest/issues/4>`_
+ - feat! Test README.rst `#4 <https://github.com/pahaz/bashtest/issues/4>`_
+ - feat! find *.bashtest by default `#3 <https://github.com/pahaz/bashtest/issues/3>`_
 
 ** 0.0.6 **
  - fix! bad command escaping bug `#5 <https://github.com/pahaz/bashtest/issues/5>`_
@@ -91,13 +92,13 @@ HELP
 ::
 
    $ bashtest --help
-   usage: bashtest.py [-h] [--exitcode] [-v] [-q] [--debug] [--version]
-                      file [file ...]
+   usage: bashtest [-h] [--exitcode] [-v] [-q] [--debug] [--version]
+                   [file [file ...]]
 
    BashTest is a UNIX command-line tool for running text-based bash tests.
 
    positional arguments:
-     file           Input file
+     file           Input file (by default uses *.bashtest)
 
    optional arguments:
      -h, --help     show this help message and exit

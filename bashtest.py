@@ -4,6 +4,7 @@ import re
 import sys
 import types
 import subprocess
+import glob
 
 __version__ = '0.0.7'
 NAME = 'bashtest'
@@ -43,8 +44,8 @@ def parseargs():
     )
 
     parser = argparse.ArgumentParser(description=description)
-    parser.add_argument('files', metavar='file', nargs='+',
-                        help='Input file')
+    parser.add_argument('files', metavar='file', nargs='*',
+                        help='Input file (by default uses *.bashtest)')
     parser.add_argument('--exitcode',
                         action='store_true',
                         help='Print exitcode after command end of output')
@@ -81,6 +82,9 @@ def main():
 
     args = parseargs()
     optionflags = doctest.NORMALIZE_WHITESPACE
+
+    if not args.files:
+        args.files = glob.glob('*.bashtest')
 
     if args.version:
         print(__version__)
