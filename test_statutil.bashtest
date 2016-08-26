@@ -3,6 +3,7 @@ Trying:
     run('ls testsuit/')
 Expecting:
     foo.py  main.py
+    <BLANKLINE>
 ok
 Trying:
     run('./stat.sh testsuit/')
@@ -10,6 +11,7 @@ Expecting:
     Evaluate *.py statistics
     PYTHON FILES:        2
     PYTHON LINES:        4
+    <BLANKLINE>
 ok
 Trying:
     run('./stat.sh')
@@ -17,9 +19,11 @@ Expecting:
     Evaluate *.py statistics
     PYTHON FILES:        3
     PYTHON LINES:        8
+    <BLANKLINE>
 ok
 1 items passed all tests:
    3 tests in tests.bashtest
 3 tests in 1 items.
 3 passed and 0 failed.
 Test passed.
+
