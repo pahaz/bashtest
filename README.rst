@@ -1,4 +1,4 @@
-|CircleCI| |coveralls| |version|
+|CircleCI| |version|
 
 |pyversions| |license|
 
@@ -39,11 +39,13 @@ If you don`t have **pip** you can `install it <https://pip.pypa.io/en/stable/ins
 Typical use case
 ================
 
-You write a text processed util or script and you want to test it.
+You have a command line util or bash/sh script and you want to test it.
 
-For example, we want test **ls** util.
+For example, we want to test **ls** util.
 
-All of we need is create **test_ls.bashtest** file::
+All of we need is to create text file with execution log.
+
+**./test_ls.bashtest** ::
 
     $ ls ./testsuit/list-directory
     file1
@@ -51,7 +53,7 @@ All of we need is create **test_ls.bashtest** file::
     file3.py
     file4.sh
 
-and then run tests ::
+Run this tests ::
 
     $ bashtest test_ls.bashtest
     1 items passed all tests:
@@ -110,8 +112,6 @@ HELP
 .. _bashtest: https://pypi.python.org/pypi/bashtest
 .. |CircleCI| image:: https://circleci.com/gh/pahaz/bashtest.svg?style=svg
    :target: https://circleci.com/gh/pahaz/bashtest
-.. |coveralls| image:: https://coveralls.io/repos/github/pahaz/bashtest/badge.svg?branch=master
-   :target: https://coveralls.io/github/pahaz/bashtest?branch=master
 .. |DwnMonth| image:: https://img.shields.io/pypi/dm/bashtest.svg
 .. |DwnWeek| image:: https://img.shields.io/pypi/dw/bashtest.svg
 .. |DwnDay| image:: https://img.shields.io/pypi/dd/bashtest.svg
