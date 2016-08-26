@@ -44,38 +44,17 @@ Another example!
 
 The best test is:
 
-    $ python ./bashtest.py --help
-    usage: bashtest.py [-h] [--exitcode] [-v] [-q] [--debug] [--version]
-                       file [file ...]
+    $ echo -e "\n\n\n\n1\n\n2\n\n\n3"
 
-    BashTest is a UNIX command-line tool for running text-based bash tests.
 
-    positional arguments:
-      file           Input file
 
-    optional arguments:
-      -h, --help     show this help message and exit
-      --exitcode     Print exitcode after command end of output
-      -v, --verbose  Verbose output mode
-      -q, --quiet    Silent output mode
-      --debug        Print the debug information
-      --version      Print the version string
 
-    $ python ./bashtest.py --help
-    usage: bashtest.py [-h] [--exitcode] [-v] [-q] [--debug] [--version]
-                       file [file ...]
+    1
 
-    BashTest is a UNIX command-line tool for running text-based bash tests.
+    2
 
-    positional arguments:
-      file           Input file
 
-    optional arguments:
-      -h, --help     show this help message and exit
-      --exitcode     Print exitcode after command end of output
-      -v, --verbose  Verbose output mode
-      -q, --quiet    Silent output mode
-      --debug        Print the debug information
-      --version      Print the version string
+    3
+
 
 eof!
