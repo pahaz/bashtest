@@ -76,6 +76,10 @@ files
 changelog
 =========
 
+** 0.0.7 **
+ - fix! remove ugly and useless options
+ - feat! Test README.rst `#3 <https://github.com/pahaz/bashtest/issues/4>`_
+
 ** 0.0.6 **
  - fix! bad command escaping bug `#5 <https://github.com/pahaz/bashtest/issues/5>`_
 
@@ -84,27 +88,22 @@ HELP
 
 ::
 
-    usage: bashtest [-h] [--exitcode] [--no-blankline-substitution]
-                    [--no-normalize-whitespace] [-v] [-q] [--version]
-                    file [file ...]
+   $ bashtest --help
+   usage: bashtest.py [-h] [--exitcode] [-v] [-q] [--debug] [--version]
+                      file [file ...]
 
-    BashTest is a UNIX command-line tool for running text-based bash tests.
+   BashTest is a UNIX command-line tool for running text-based bash tests.
 
-    positional arguments:
-      file                  Input file
+   positional arguments:
+     file           Input file
 
-    optional arguments:
-      -h, --help            show this help message and exit
-      --exitcode            Print exitcode after command end of output
-      --no-blankline-substitution
-                            Substitute `<BLANKLINE>` if an expected output block
-                            contains a line containing only the `\n`
-      --no-normalize-whitespace
-                            All sequences of whitespace (blanks and newlines) are
-                            not equal
-      -v, --verbose
-      -q, --quiet
-      --version             Print the version string
+   optional arguments:
+     -h, --help     show this help message and exit
+     --exitcode     Print exitcode after command end of output
+     -v, --verbose  Verbose output mode
+     -q, --quiet    Silent output mode
+     --debug        Print the debug information
+     --version      Print the version string
 
 
 .. _Pahaz Blinov: https://github.com/pahaz/

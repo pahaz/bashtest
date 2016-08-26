@@ -5,7 +5,7 @@ import sys
 import types
 import subprocess
 
-__version__ = '0.0.6'
+__version__ = '0.0.7'
 NAME = 'bashtest'
 CHECK_EXITCODE = False
 
@@ -48,23 +48,19 @@ def parseargs():
     parser.add_argument('--exitcode',
                         action='store_true',
                         help='Print exitcode after command end of output')
-    parser.add_argument('--no-blankline-substitution',  # I do not use it
-                        dest='no_blankline_substitution',
-                        action='store_true',
-                        help='Substitute `<BLANKLINE>` if an expected output '
-                             'block contains a line containing only the `\\n`')
-    parser.add_argument('--no-normalize-whitespace',
-                        dest='no_normalize_whitespace',
-                        action='store_true',
-                        help='All sequences of whitespace '
-                             '(blanks and newlines) are not equal')
 
     parser.add_argument('-v', '--verbose',
                         dest='verbose',
-                        action='store_true')
+                        action='store_true',
+                        help='Verbose output mode')
     parser.add_argument('-q', '--quiet',
                         dest='quiet',
-                        action='store_true')
+                        action='store_true',
+                        help='Silent output mode')
+    parser.add_argument('--debug',
+                        dest='debug',
+                        action='store_true',
+                        help='Print the debug information')
 
     parser.add_argument('--version',
                         dest='version',
@@ -84,7 +80,7 @@ def main():
     global CHECK_EXITCODE
 
     args = parseargs()
-    optionflags = 0
+    optionflags = doctest.NORMALIZE_WHITESPACE
 
     if args.version:
         print(__version__)
@@ -92,15 +88,10 @@ def main():
 
     if args.quiet:
         args.verbose = False
+        args.debug = False
 
     if args.exitcode:
         CHECK_EXITCODE = True
-
-    if args.no_blankline_substitution:
-        optionflags |= doctest.DONT_ACCEPT_BLANKLINE
-
-    if not args.no_normalize_whitespace:
-        optionflags |= doctest.NORMALIZE_WHITESPACE
 
     finder = doctest.DocTestFinder()
     runner = doctest.DocTestRunner(
@@ -108,15 +99,34 @@ def main():
 
     ret = 0
     rgx = re.compile('^(\s*)\$ (.+)$')
+    margin = ''
+    in_block = False
     for file in args.files:
         with open(file) as f:
             res = []
             for line in f:
-                if rgx.match(line):
+                line = line.rstrip('\r\n')
+                match = rgx.match(line)
+                if match:
+                    if in_block:
+                        res.append('')
+                    margin = match.group(1)
+                    in_block = True
                     line, _ = rgx.subn(__re_repl, line)
+                else:
+                    if not line and in_block:
+                        line = margin + '<BLANKLINE>'
+                    if line and in_block:
+                        if not line.startswith(margin):
+                            in_block = False
+                            res.append('')
                 res.append(line)
 
-        res = ''.join(res)
+        res = '\n'.join(res)
+
+        if args.debug:
+            print('**** %s ****\n%s\n**** /%s ****\n\n' % (file, res, file))
+
         fake_module = types.ModuleType(file, res)
         fake_module.run = _fake_module_run
         for test in finder.find(fake_module, file):
