@@ -6,7 +6,7 @@ import types
 import subprocess
 import glob
 
-__version__ = '0.0.7'
+__version__ = '0.0.8'
 NAME = 'bashtest'
 CHECK_EXITCODE = False
 
@@ -74,7 +74,10 @@ def parseargs():
 def __re_repl(match):
     g1 = match.group(1)
     g2 = match.group(2)
-    return '%s>>> run(%s)' % (g1, quote(g2.replace('\\', '\\\\')))
+    g2 = quote(g2.replace('\\', '\\\\'))
+    if re.search(r'#skipbashtest', g2):
+        return 'skip! %r %r' % (g1, g2)
+    return '%s>>> run(%s)' % (g1, g2)
 
 
 def main():

@@ -78,6 +78,9 @@ files
 changelog
 =========
 
+** 0.0.8 **
+ - add ``#skipbashtest`` support
+
 ** 0.0.7 **
  - fix! remove ugly and useless options
  - feat! Test README.rst `#4 <https://github.com/pahaz/bashtest/issues/4>`_
